@@ -1,0 +1,19 @@
+[package]
+cairo-version = "2.6.3"
+name = "song_of_camelot"
+version = "0.1.0"
+edition = "2023_11"
+
+[cairo]
+sierra-replace-ids = true
+
+[dependencies]
+dojo = { git = "https://github.com/dojoengine/dojo", tag = "v1.5.0" }
+
+[[target.starknet-contract]]
+sierra = true
+build-external-contracts = ["dojo::world::world_contract::world"]
+
+[dev-dependencies]
+cairo_test = "2.6.3"
+dojo_cairo_test = { git = "https://github.com/dojoengine/dojo", tag = "v1.5.0" }
