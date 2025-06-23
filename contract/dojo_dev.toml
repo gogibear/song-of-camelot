@@ -1,9 +1,14 @@
 [world]
 name = "song_of_camelot"
+description = "song_of_camelot"
 seed = "song_of_camelot"
 
 [namespace]
 default = "song_of_camelot"
+
+[cartridge]
+controllers = true
+paymaster = true
 
 [env]
 rpc_url = "http://localhost:5050/"
