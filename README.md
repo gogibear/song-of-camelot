@@ -144,3 +144,73 @@ The starter demonstrates essential onchain game patterns:
 ---
 
 **Built with ❤️ for the Starknet gaming community**
+
+# Song of Camelot
+
+## Submission for Dojo Game Jam 6
+
+### Project Summary
+
+Song of Camelot is an on-chain game where players compete to dominate a map by strategically placing elemental influences. This project includes a main game application and a separate login wrapper that uses the Cartridge wallet system for a seamless user onboarding experience.
+
+### How to Play
+
+To run this project, you will need to run two separate applications simultaneously: the login wrapper and the main game.
+
+**Prerequisites:**
+*   Node.js and npm
+*   Dojo toolchain (`sozo`, `katana`)
+
+**1. Clone the Repository**
+```bash
+git clone https://github.com/gogibear/song-of-camelot.git
+cd song-of-camelot
+```
+
+**2. Set up the Login Wrapper**
+
+First, we'll get the login application running. This handles wallet connection and player creation.
+
+```bash
+# Navigate to the login wrapper's contract directory
+cd login-wrapper/contract
+
+# Build and migrate the contracts
+sozo build
+sozo migrate
+
+# Navigate to the login wrapper's client directory
+cd ../client
+
+# Install dependencies and start the dev server
+npm install
+npm run dev
+```
+This will start the login wrapper on `http://localhost:3002`. Keep this terminal open.
+
+**3. Set up the Main Game**
+
+Now, in a **new terminal window**, we'll start the main game application.
+
+```bash
+# Navigate to the main game's contract directory from the project root
+cd contract
+
+# Build and migrate the contracts
+sozo build
+sozo migrate
+
+# Navigate to the main game's client directory
+cd ../client/project
+
+# Install dependencies and start the dev server
+npm install
+npm run dev
+```
+This will start the main game on `http://localhost:5173`. Keep this terminal open as well.
+
+**4. Play the Game!**
+
+*   Open your web browser and go to `http://localhost:3002`.
+*   You will see the "Enter Avalon" login screen. Click "Begin Quest" to connect your wallet.
+*   Once you are logged in, you will be automatically redirected to the main game at `http://localhost:5173`.
